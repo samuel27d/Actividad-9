@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ficha técnica y detalle de producto: Lomo Fino de Res (Solomito) en AgroConnect." />
+  <title>Lomo Fino de Res (Solomito) — AgroConnect</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-top-bar">
+        <div class="container header-top-container">
+          <div class="header-top-left">
+            <span class="top-bar-badge">AgroConnect Directo</span>
+            <span class="top-bar-text">Alimentos frescos del campo a tu mesa sin intermediación</span>
+          </div>
+          <div class="header-top-right">
+            <a href="login.html" class="top-bar-login-link">Acceso a Productores y Clientes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-main-bar">
+        <div class="header-container container">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon-wrapper"><i data-lucide="sprout" class="brand-icon-svg" data-size="24"></i></div>
+            <div class="brand-text"><span class="brand-name">AgroConnect</span><span class="brand-tagline">Mercado Agroalimentario</span></div>
+          </a>
+
+          <form class="header-search-box" action="productos.html" method="get">
+            <i data-lucide="search" class="header-search-icon" data-size="18"></i>
+            <input type="text" name="search" class="header-search-input" placeholder="Buscar cortes de carne, frutas, verduras..." />
+          </form>
+
+          <nav class="desktop-nav">
+            <a href="index.html" class="nav-link"><i data-lucide="home" data-size="16"></i><span>Inicio</span></a>
+            <a href="productos.html" class="nav-link active"><i data-lucide="store" data-size="16"></i><span>Catálogo</span></a>
+            <a href="dashboard.html" class="nav-link"><i data-lucide="layout-dashboard" data-size="16"></i><span>Dashboard</span></a>
+            <a href="admin-productos.html" class="nav-link nav-link-admin"><i data-lucide="settings" data-size="16"></i><span>Administración</span></a>
+          </nav>
+
+          <div class="header-actions">
+            <a href="carrito.html" class="cart-button">
+              <i data-lucide="shopping-bag" data-size="19"></i>
+              <span>Canasta</span>
+              <span class="cart-badge">3</span>
+            </a>
+            <a href="login.html" class="btn btn-outline-primary btn-header-login">
+              <i data-lucide="log-in" data-size="16"></i>
+              <span>Acceder</span>
+            </a>
+            <button type="button" class="mobile-menu-toggle"><i data-lucide="menu" data-size="22"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Drawer Móvil -->
+    <div class="mobile-nav-backdrop" style="display: none;">
+      <aside class="mobile-nav-drawer">
+        <div class="mobile-nav-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div class="brand-icon-wrapper-sm"><i data-lucide="sprout" data-size="18"></i></div>
+            <span class="mobile-nav-title">AgroConnect</span>
+          </div>
+          <button type="button" class="mobile-nav-close"><i data-lucide="x" data-size="20"></i></button>
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="index.html" class="mobile-nav-link"><i data-lucide="home" data-size="18"></i><span>Inicio</span></a>
+          <a href="productos.html" class="mobile-nav-link active"><i data-lucide="store" data-size="18"></i><span>Catálogo</span></a>
+          <a href="carrito.html" class="mobile-nav-link"><i data-lucide="shopping-bag" data-size="18"></i><span>Canasta</span></a>
+          <a href="dashboard.html" class="mobile-nav-link"><i data-lucide="layout-dashboard" data-size="18"></i><span>Dashboard</span></a>
+          <a href="admin-productos.html" class="mobile-nav-link"><i data-lucide="settings" data-size="18"></i><span>Administración</span></a>
+          <a href="login.html" class="mobile-nav-link"><i data-lucide="log-in" data-size="18"></i><span>Iniciar Sesión</span></a>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="main-content" id="main-content">
+      <div class="product-detail-page py-5">
+        <div class="container">
+          <!-- Breadcrumbs -->
+          <nav class="breadcrumbs mb-4" style="font-size: 0.875rem; margin-bottom: 1.5rem; color: var(--text-muted);">
+            <a href="index.html" style="color: var(--primary-600);">Inicio</a>
+            <span style="margin: 0 0.5rem;">/</span>
+            <a href="productos.html" style="color: var(--primary-600);">Catálogo</a>
+            <span style="margin: 0 0.5rem;">/</span>
+            <a href="productos.html?category=1" style="color: var(--primary-600);">Carnes de Res</a>
+            <span style="margin: 0 0.5rem;">/</span>
+            <span style="font-weight: 700; color: var(--text-primary);">Lomo Fino de Res (Solomito)</span>
+          </nav>
+
+          <!-- Layout Detallado -->
+          <div class="product-detail-layout">
+            <!-- Columna Multimedia Izquierda -->
+            <div class="detail-media-column">
+              <div class="detail-image-wrapper">
+                <img
+                  src="assets/images/lomo-fino-de-res-solomito.png"
+                  alt="Fotografía comercial real de Lomo Fino de Res (Solomito)"
+                  class="detail-image"
+                />
+                <div class="detail-badges-overlay">
+                  <span class="badge badge-category">Carnes de Res Seleccionadas</span>
+                  <span class="badge badge-neutral">Res • Lomo Fino</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+
+              <!-- Garantía adicional de conservación -->
+              <div style="margin-top: 1.5rem; background: var(--bg-muted); padding: 1rem 1.25rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 1rem;">
+                <div style="background: var(--primary-100); color: var(--primary-700); width: 40px; height: 40px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="thermometer-snowflake" data-size="20"></i>
+                </div>
+                <div>
+                  <strong style="font-size: 0.9rem; display: block; color: var(--text-primary);">Cadena de Frío Garantizada</strong>
+                  <small style="color: var(--text-secondary);">Empacado en origen a 2°C con control térmico durante todo el transporte hasta tu domicilio.</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Información y Compra Derecha -->
+            <div class="detail-info-column">
+              <h1 class="detail-title">Lomo Fino de Res (Solomito)</h1>
+
+              <div class="detail-pricing-box">
+                <span class="detail-price">$ 46.000</span>
+                <span class="detail-unit">/ kg</span>
+              </div>
+
+              <div class="detail-stock-indicator">
+                <span class="stock-dot in-stock"></span>
+                <span>Existencias disponibles: 18 kg en bodega refrigerada</span>
+              </div>
+
+              <!-- Caja de Compra y Selector de Cantidad -->
+              <div class="detail-purchase-box">
+                <div class="quantity-row">
+                  <label style="font-weight: 700; font-size: 0.9rem; color: var(--text-primary);">Cantidad a pedir:</label>
+                  <div class="quantity-selector quantity-selector-lg">
+                    <button type="button" class="qty-btn" aria-label="Disminuir">-</button>
+                    <span class="qty-display">2</span>
+                    <button type="button" class="qty-btn" aria-label="Aumentar">+</button>
+                  </div>
+                  <span style="color: var(--text-muted); font-size: 0.85rem;">(Equivale a 2.0 kg aprox.)</span>
+                </div>
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                  <a href="carrito.html" class="btn btn-primary btn-lg" style="flex: 1;">
+                    <i data-lucide="shopping-cart" data-size="20"></i>
+                    <span>Agregar a la Canasta</span>
+                  </a>
+                  <a href="checkout.html" class="btn btn-outline-primary btn-lg" style="flex: 1;">
+                    <span>Comprar Ahora</span>
+                    <i data-lucide="arrow-right" data-size="18"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Descripción -->
+              <div class="detail-desc-box">
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Descripción del Producto</h3>
+                <p>
+                  Corte magro de suavidad insuperable, seleccionado rigurosamente y libre de cordón graso. Proviene de ganado bovino criado en pastoreo rotacional en Marinilla (Antioquia). Madurado en cámara durante 21 días para concentrar sabor y ternura natural.
+                </p>
+                <small class="text-muted" style="display: block; margin-top: 0.5rem;">
+                  Lote de Producción: AGRO-RES-2026-088 • Fecha de empacado: Hace 2 días
+                </small>
+              </div>
+
+              <!-- Ficha Técnica del Corte -->
+              <div class="detail-meat-specs-box">
+                <h4>Ficha Técnica del Corte Cárnico</h4>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-label">Tipo de Carne:</span>
+                    <span class="spec-val">Res Nacional</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Corte Específico:</span>
+                    <span class="spec-val">Lomo Fino (Solomito)</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Presentación:</span>
+                    <span class="spec-val">Empaque al vacío en medallones</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Conservación:</span>
+                    <span class="spec-val">Refrigerado 0°C a 4°C</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Peso Promedio:</span>
+                    <span class="spec-val">1.0 kg por unidad</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-label">Maduración:</span>
+                    <span class="spec-val">21 días en cámara</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ficha del Productor / Ganadero -->
+              <div class="farmer-detail-box" style="background: #fdfaf5; border: 1px solid #ebd9c8; border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div class="farmer-detail-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+                  <div style="width: 52px; height: 52px; border-radius: var(--radius-full); background: var(--primary-100); color: var(--primary-700); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0; border: 2px solid var(--primary-500);">
+                    CM
+                  </div>
+                  <div>
+                    <h4 style="margin: 0; font-size: 1.05rem; color: var(--text-primary);">Don Carlos Mendoza</h4>
+                    <span style="font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.35rem;">
+                      <i data-lucide="store" data-size="14"></i>
+                      <span>Finca El Mirador • Ganadería Sostenible Bovina</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="farmer-detail-meta" style="font-size: 0.825rem; color: var(--text-secondary); display: flex; flex-wrap: wrap; gap: 1rem; border-top: 1px solid #f0e2d3; padding-top: 0.75rem;">
+                  <span style="display: flex; align-items: center; gap: 0.35rem;">
+                    <i data-lucide="map-pin" data-size="14"></i>
+                    <span>Marinilla, Antioquia</span>
+                  </span>
+                  <span style="display: flex; align-items: center; gap: 0.35rem;">
+                    <i data-lucide="phone" data-size="14"></i>
+                    <span>+57 312 458 9012</span>
+                  </span>
+                  <span style="display: flex; align-items: center; gap: 0.35rem;">
+                    <i data-lucide="shield-check" data-size="14" style="color: var(--primary-600);"></i>
+                    <span>Productor Verificado AgroConnect</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Productos Relacionados -->
+          <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h2 style="font-size: 1.4rem;">Otros Cortes del Mismo Productor</h2>
+              <a href="productos.html?category=1" class="btn btn-outline-secondary btn-sm">Ver pasillo de res →</a>
+            </div>
+
+            <div class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+              <!-- Relacionado 1 -->
+              <article class="product-card">
+                <div class="product-card-media">
+                  <a href="detalle-producto.html"><img src="assets/images/costilla-de-res-para-asar.png" alt="Costilla de Res" class="product-card-img" /></a>
+                  <div class="product-card-badges">
+                    <span class="badge badge-category">Carnes de Res</span>
+                    <span class="badge badge-success">Disponible</span>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <h3 class="product-card-title"><a href="detalle-producto.html">Costilla de Res para Asar</a></h3>
+                  <div class="product-card-footer">
+                    <div class="product-price-box"><span class="product-price-amount">$ 24.500</span><span class="product-price-unit">/ kg</span></div>
+                    <a href="carrito.html" class="btn btn-primary btn-sm"><i data-lucide="shopping-cart" data-size="15"></i><span>Agregar</span></a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Relacionado 2 -->
+              <article class="product-card">
+                <div class="product-card-media">
+                  <a href="detalle-producto.html"><img src="assets/images/carne-molida-especial-9010.png" alt="Carne Molida" class="product-card-img" /></a>
+                  <div class="product-card-badges">
+                    <span class="badge badge-category">Carnes de Res</span>
+                    <span class="badge badge-success">Disponible</span>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <h3 class="product-card-title"><a href="detalle-producto.html">Carne Molida Especial 90/10</a></h3>
+                  <div class="product-card-footer">
+                    <div class="product-price-box"><span class="product-price-amount">$ 26.000</span><span class="product-price-unit">/ kg</span></div>
+                    <a href="carrito.html" class="btn btn-primary btn-sm"><i data-lucide="shopping-cart" data-size="15"></i><span>Agregar</span></a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container footer-container">
+        <div class="footer-grid">
+          <div class="footer-col footer-col-brand">
+            <a href="index.html" class="brand-logo footer-logo">
+              <div class="brand-icon-wrapper"><i data-lucide="sprout" data-size="24"></i></div>
+              <div class="brand-text"><span class="brand-name">AgroConnect</span><span class="brand-tagline">Mercado Agroalimentario</span></div>
+            </a>
+            <p class="footer-desc">Plataforma de comercio agropecuario orientada a la venta directa de alimentos frescos del campo.</p>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">Departamentos</h4>
+            <ul class="footer-links">
+              <li><a href="productos.html">Catálogo General</a></li>
+              <li><a href="productos.html?category=1">Carnes de Res Seleccionadas</a></li>
+              <li><a href="productos.html?category=2">Carne de Cerdo de Origen</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">Servicios</h4>
+            <ul class="footer-links">
+              <li><a href="carrito.html">Canasta de Compras</a></li>
+              <li><a href="dashboard.html">Panel de Usuario</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">Compromiso</h4>
+            <ul class="footer-features-list">
+              <li><i data-lucide="truck" data-size="15"></i><span>Transporte refrigerado</span></li>
+              <li><i data-lucide="shield-check" data-size="15"></i><span>Pesaje certificado</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copyright">© 2026 AgroConnect. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+

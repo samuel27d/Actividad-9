@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AgroConnect: Plataforma de comercio agropecuario directo entre familias campesinas y hogares. Carnes seleccionadas, alimentos frescos y café especial." />
+  <meta name="theme-color" content="#0d3822" />
+  <title>AgroConnect — Comercio Agrícola y Alimentos del Campo</title>
+
+  <!-- Tipografía Oficial Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Hojas de Estilo Aisladas del Prototipo -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- 1. Header Corporativo -->
+    <header class="app-header">
+      <!-- 1.1 Barra Superior de Servicios -->
+      <div class="header-top-bar">
+        <div class="container header-top-container">
+          <div class="header-top-left">
+            <span class="top-bar-badge">AgroConnect Directo</span>
+            <span class="top-bar-text">Alimentos frescos del campo a tu mesa sin intermediación innecesaria</span>
+          </div>
+          <div class="header-top-right">
+            <a href="login.html" class="top-bar-login-link">
+              Acceso a Productores y Clientes
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.2 Barra Principal de Navegación y Búsqueda -->
+      <div class="header-main-bar">
+        <div class="header-container container">
+          <!-- Logotipo -->
+          <a href="index.html" class="brand-logo" aria-label="AgroConnect - Inicio">
+            <div class="brand-icon-wrapper">
+              <i data-lucide="sprout" class="brand-icon-svg" data-size="24"></i>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">AgroConnect</span>
+              <span class="brand-tagline">Mercado Agroalimentario</span>
+            </div>
+          </a>
+
+          <!-- Buscador de Supermercado -->
+          <form class="header-search-box" action="productos.html" method="get">
+            <i data-lucide="search" class="header-search-icon" data-size="18"></i>
+            <input
+              type="text"
+              name="search"
+              class="header-search-input"
+              placeholder="Buscar cortes de carne, frutas, verduras, café..."
+              aria-label="Buscar productos en el catálogo"
+            />
+            <button type="button" class="header-search-clear" style="display: none;" aria-label="Limpiar búsqueda">
+              <i data-lucide="x" data-size="14"></i>
+            </button>
+          </form>
+
+          <!-- Navegación de Escritorio -->
+          <nav class="desktop-nav" aria-label="Navegación principal">
+            <a href="index.html" class="nav-link active">
+              <i data-lucide="home" data-size="16"></i>
+              <span>Inicio</span>
+            </a>
+            <a href="productos.html" class="nav-link">
+              <i data-lucide="store" data-size="16"></i>
+              <span>Catálogo</span>
+            </a>
+            <a href="dashboard.html" class="nav-link">
+              <i data-lucide="layout-dashboard" data-size="16"></i>
+              <span>Dashboard</span>
+            </a>
+            <a href="admin-productos.html" class="nav-link nav-link-admin">
+              <i data-lucide="settings" data-size="16"></i>
+              <span>Administración</span>
+            </a>
+          </nav>
+
+          <!-- Acciones de Cabecera -->
+          <div class="header-actions">
+            <!-- Botón Canasta -->
+            <a href="carrito.html" class="cart-button" aria-label="Ver canasta de compras">
+              <i data-lucide="shopping-bag" data-size="19"></i>
+              <span>Canasta</span>
+              <span class="cart-badge">3</span>
+            </a>
+
+            <!-- Acceso Usuario -->
+            <a href="login.html" class="btn btn-outline-primary btn-header-login">
+              <i data-lucide="log-in" data-size="16"></i>
+              <span>Acceder</span>
+            </a>
+
+            <!-- Hamburguesa Móvil -->
+            <button type="button" class="mobile-menu-toggle" aria-label="Abrir menú de navegación">
+              <i data-lucide="menu" data-size="22"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Drawer Móvil de Navegación -->
+    <div class="mobile-nav-backdrop" style="display: none;">
+      <aside class="mobile-nav-drawer">
+        <div class="mobile-nav-header">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div class="brand-icon-wrapper-sm">
+              <i data-lucide="sprout" data-size="18"></i>
+            </div>
+            <span class="mobile-nav-title">AgroConnect</span>
+          </div>
+          <button type="button" class="mobile-nav-close" aria-label="Cerrar menú">
+            <i data-lucide="x" data-size="20"></i>
+          </button>
+        </div>
+
+        <form class="mobile-search-form" action="productos.html" method="get">
+          <div class="mobile-search-input-wrapper">
+            <i data-lucide="search" data-size="16"></i>
+            <input type="text" name="search" class="mobile-search-input" placeholder="Buscar alimentos o cortes..." />
+          </div>
+        </form>
+
+        <nav class="mobile-nav-links">
+          <a href="index.html" class="mobile-nav-link active">
+            <i data-lucide="home" data-size="18"></i>
+            <span>Inicio</span>
+          </a>
+          <a href="productos.html" class="mobile-nav-link">
+            <i data-lucide="store" data-size="18"></i>
+            <span>Catálogo Completo</span>
+          </a>
+          <a href="carrito.html" class="mobile-nav-link">
+            <i data-lucide="shopping-bag" data-size="18"></i>
+            <span>Canasta de Compras</span>
+          </a>
+          <div class="mobile-nav-divider"></div>
+          <span class="mobile-nav-section-label">Gestión y Productores</span>
+          <a href="dashboard.html" class="mobile-nav-link">
+            <i data-lucide="layout-dashboard" data-size="18"></i>
+            <span>Panel de Control</span>
+          </a>
+          <a href="admin-productos.html" class="mobile-nav-link">
+            <i data-lucide="settings" data-size="18"></i>
+            <span>Gestión de Catálogo</span>
+          </a>
+          <a href="login.html" class="mobile-nav-link">
+            <i data-lucide="log-in" data-size="18"></i>
+            <span>Iniciar Sesión</span>
+          </a>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="main-content" id="main-content">
+      <!-- 2. Hero Principal -->
+      <section class="hero-section">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <div class="hero-badge-wrapper">
+              <i data-lucide="shield-check" class="hero-badge-icon" data-size="16"></i>
+              <span>Alimentos Seleccionados Directos del Productor</span>
+            </div>
+            <h1 class="hero-title">
+              Cortes Selectos y <span class="text-highlight">Cosechas del Campo</span> en tu Hogar
+            </h1>
+            <p class="hero-subtitle">
+              Abastécete con carne de res madurada, cortes porcinos, aves, frutas y hortalizas frescas, con trazabilidad certificada desde las fincas de familias campesinas y ganaderos.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="productos.html" class="btn btn-primary btn-lg">
+                <span>Explorar Catálogo</span>
+                <i data-lucide="arrow-right" data-size="18"></i>
+              </a>
+              <a href="login.html" class="btn btn-outline-secondary btn-lg">
+                <span>Acceso a Productores</span>
+              </a>
+            </div>
+
+            <!-- Métricas Clave -->
+            <div class="hero-stats">
+              <div class="hero-stat-item">
+                <span class="stat-number">38+</span>
+                <span class="stat-label">Cortes y Cosechas</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Departamentos</span>
+              </div>
+              <div class="hero-stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Fincas Vinculadas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-image-card">
+              <img
+                src="assets/images/lomo-fino-de-res-solomito.png"
+                alt="Selección de alimentos frescos y carnes seleccionadas del campo"
+                class="hero-main-img"
+              />
+              <div class="hero-floating-badge">
+                <div class="floating-icon-box">
+                  <i data-lucide="award" data-size="22"></i>
+                </div>
+                <div>
+                  <strong>Origen de Finca Certificado</strong>
+                  <small>Directo desde el predio productor sin intermediarios</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Banner Promocional -->
+      <section class="container my-4" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <div class="promo-banner-card" style="background: linear-gradient(135deg, #0d3822 0%, #15803d 100%); color: #ffffff; padding: 2rem; border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: var(--shadow-md);">
+          <div style="max-width: 620px;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.18); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; margin-bottom: 0.75rem;">
+              <i data-lucide="sparkles" data-size="14"></i>
+              <span>OFERTA ESPECIAL DE TEMPORADA</span>
+            </div>
+            <h2 style="color: #ffffff; font-size: 1.85rem; font-weight: 800; margin-bottom: 0.5rem;">Festival de Carnes Maduradas: 15% OFF</h2>
+            <p style="color: #e2f5e7; margin: 0; font-size: 0.95rem;">Lleva lomo fino, punta de anca y bondiola seleccionada con descuento directo aplicando el cupón en canasta.</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <div style="background: #ffffff; color: var(--primary-800); padding: 0.6rem 1.25rem; border-radius: var(--radius-md); font-family: monospace; font-weight: 800; font-size: 1.1rem; border: 2px dashed var(--primary-500);">
+              MADURADOS15
+            </div>
+            <a href="productos.html?category=1" class="btn" style="background-color: #ffffff; color: var(--primary-700); font-weight: 700;">
+              Aprovechar Promoción →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Departamentos y Categorías del Campo -->
+      <section class="categories-section py-5">
+        <div class="container">
+          <div class="section-header text-center" style="text-align: center; margin-bottom: 2rem;">
+            <span class="section-eyebrow" style="color: var(--primary-600); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Departamentos del Mercado</span>
+            <h2 class="section-title">Explora por Categorías</h2>
+            <p class="section-desc" style="color: var(--text-secondary); max-width: 550px; margin: 0.5rem auto 0;">Selecciona el tipo de alimento o corte especializado para abastecer tu hogar o restaurante.</p>
+          </div>
+
+          <div class="categories-grid">
+            <a href="productos.html?category=1" class="category-card">
+              <div class="category-icon-wrapper">
+                <i data-lucide="beef" class="category-icon-svg" data-size="28"></i>
+              </div>
+              <h3 class="category-name">Carnes de Res</h3>
+              <p class="category-desc">Cortes madurados y cortes tradicionales de ganadería sostenible.</p>
+              <span class="category-link">Ver pasillo →</span>
+            </a>
+
+            <a href="productos.html?category=2" class="category-card">
+              <div class="category-icon-wrapper">
+                <i data-lucide="utensils-crossed" class="category-icon-svg" data-size="28"></i>
+              </div>
+              <h3 class="category-name">Carnes de Cerdo</h3>
+              <p class="category-desc">Cortes frescos, jugosos y magros de porcicultura tecnificada.</p>
+              <span class="category-link">Ver pasillo →</span>
+            </a>
+
+            <a href="productos.html?category=3" class="category-card">
+              <div class="category-icon-wrapper">
+                <i data-lucide="apple" class="category-icon-svg" data-size="28"></i>
+              </div>
+              <h3 class="category-name">Frutas Frescas</h3>
+              <p class="category-desc">Cosechas recolectadas en su punto óptimo de maduración natural.</p>
+              <span class="category-link">Ver pasillo →</span>
+            </a>
+
+            <a href="productos.html?category=4" class="category-card">
+              <div class="category-icon-wrapper">
+                <i data-lucide="carrot" class="category-icon-svg" data-size="28"></i>
+              </div>
+              <h3 class="category-name">Verduras y Huerta</h3>
+              <p class="category-desc">Cultivos limpios de huerta campesina, cosechados diariamente.</p>
+              <span class="category-link">Ver pasillo →</span>
+            </a>
+
+            <a href="productos.html?category=5" class="category-card">
+              <div class="category-icon-wrapper">
+                <i data-lucide="package" class="category-icon-svg" data-size="28"></i>
+              </div>
+              <h3 class="category-name">Tubérculos Andinos</h3>
+              <p class="category-desc">Arracacha, papa criolla y plátano directo de tierra andina.</p>
+              <span class="category-link">Ver pasillo →</span>
+            </a>
+
+            <a href="productos.html?category=6" class="category-card">
+              <div class="category-icon-wrapper">
+                <i data-lucide="coffee" class="category-icon-svg" data-size="28"></i>
+              </div>
+              <h3 class="category-name">Café y Despensa</h3>
+              <p class="category-desc">Cafés especiales de altura, panela y miel campesina artesanal.</p>
+              <span class="category-link">Ver pasillo →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Productos Destacados -->
+      <section class="featured-section py-5 bg-surface" style="background-color: var(--bg-surface); padding-top: 3rem; padding-bottom: 3.5rem;">
+        <div class="container">
+          <div class="section-header-flex" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+            <div>
+              <span class="section-eyebrow" style="color: var(--primary-600); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Selección del Día</span>
+              <h2 class="section-title">Cortes y Productos Destacados</h2>
+            </div>
+            <a href="productos.html" class="btn btn-outline-primary">
+              <span>Ver Catálogo Completo (38)</span>
+              <i data-lucide="arrow-right" data-size="16"></i>
+            </a>
+          </div>
+
+          <div class="product-grid">
+            <!-- Producto 1: Lomo Fino -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/lomo-fino-de-res-solomito.png" alt="Lomo Fino de Res (Solomito)" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Carnes de Res</span>
+                  <span class="badge badge-neutral">Res • Lomo Fino</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Marinilla, Antioquia">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Don Carlos Mendoza • <small>Finca El Mirador</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Lomo Fino de Res (Solomito)</a>
+                </h3>
+                <p class="product-card-desc">Corte magro de suavidad insuperable, seleccionado y libre de cordón para preparaciones gourmet.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: 1 kg aprox</span>
+                  <span class="product-conservation-badge">Refrigerado 0°C a 4°C</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 46.000</span>
+                    <span class="product-price-unit">/ kg</span>
+                    <span class="product-stock-counter">Stock: 18 kg</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm" aria-label="Ver detalles">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm" aria-label="Agregar a canasta">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 2: Costilla de Res -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/costilla-de-res-para-asar.png" alt="Costilla de Res para Asar" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Carnes de Res</span>
+                  <span class="badge badge-neutral">Res • Costilla</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Marinilla, Antioquia">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Don Carlos Mendoza • <small>Finca El Mirador</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Costilla de Res para Asar</a>
+                </h3>
+                <p class="product-card-desc">Costilla con veteado natural ideal para asados lentos o preparaciones a la parrilla.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: 1.5 kg aprox</span>
+                  <span class="product-conservation-badge">Refrigerado 0°C a 4°C</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 24.500</span>
+                    <span class="product-price-unit">/ kg</span>
+                    <span class="product-stock-counter">Stock: 30 kg</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 3: Bondiola de Cerdo -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/bondiola-de-cerdo-fresca.jpg" alt="Bondiola de Cerdo Fresca" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Carnes de Cerdo</span>
+                  <span class="badge badge-neutral">Cerdo • Bondiola</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Santa Rosa de Osos, Antioquia">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Doña Marta Lucía Gómez • <small>Granja La Porcina</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Bondiola de Cerdo Fresca</a>
+                </h3>
+                <p class="product-card-desc">Corte jugoso y marmoleado del cuello porcino, perfecto para horneados, ahumados o steaks.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: 1.2 kg aprox</span>
+                  <span class="product-conservation-badge">Refrigerado 0°C a 4°C</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 28.000</span>
+                    <span class="product-price-unit">/ kg</span>
+                    <span class="product-stock-counter">Stock: 16 kg</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 4: Chuleta de Cerdo -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/chuleta-de-cerdo-de-centro.png" alt="Chuleta de Cerdo de Centro" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Carnes de Cerdo</span>
+                  <span class="badge badge-neutral">Cerdo • Chuleta</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Santa Rosa de Osos, Antioquia">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Doña Marta Lucía Gómez • <small>Granja La Porcina</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Chuleta de Cerdo de Centro</a>
+                </h3>
+                <p class="product-card-desc">Chuletas con hueso de lomo centro, tiernas y jugosas con corte parejo y fresco.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: 1 kg (4 unidades)</span>
+                  <span class="product-conservation-badge">Refrigerado 0°C a 4°C</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 22.500</span>
+                    <span class="product-price-unit">/ kg</span>
+                    <span class="product-stock-counter">Stock: 25 kg</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 5: Carne Molida 90/10 -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/carne-molida-especial-9010.png" alt="Carne Molida Especial 90/10" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Carnes de Res</span>
+                  <span class="badge badge-neutral">Res • Molida</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Marinilla, Antioquia">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Don Carlos Mendoza • <small>Finca El Mirador</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Carne Molida Especial 90/10</a>
+                </h3>
+                <p class="product-card-desc">Carne magra molida de primera selección (90% carne magra, 10% grasa natural), sin aditivos.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: 1 kg al vacío</span>
+                  <span class="product-conservation-badge">Refrigerado 0°C a 4°C</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 26.000</span>
+                    <span class="product-price-unit">/ kg</span>
+                    <span class="product-stock-counter">Stock: 20 kg</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 6: Arracacha de Cajamarca -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/arracacha-de-cajamarca.jpg" alt="Arracacha de Cajamarca" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Tubérculos</span>
+                  <span class="badge badge-neutral">Cosecha Andina</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Cajamarca, Tolima">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Familia Huertas Gómez • <small>Huerta El Progreso</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Arracacha Amarilla de Cajamarca</a>
+                </h3>
+                <p class="product-card-desc">Tubérculo de textura suave y aroma dulce, cosechado a mano en laderas andinas.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: 1 kg malla</span>
+                  <span class="product-conservation-badge">Fresco Ambiente</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 4.800</span>
+                    <span class="product-price-unit">/ kg</span>
+                    <span class="product-stock-counter">Stock: 60 kg</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 7: Arveja Verde en Vaina -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/arveja-verde-en-vaina.png" alt="Arveja Verde en Vaina" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Verduras</span>
+                  <span class="badge badge-neutral">Huerta Campesina</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Rionegro, Antioquia">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Asociación Campesina • <small>Tierras de Oriente</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Arveja Verde en Vaina</a>
+                </h3>
+                <p class="product-card-desc">Vainas tiernas, dulces y carnosas seleccionadas manualmente, ideales para guisos y ensaladas.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: 1 kg fresca</span>
+                  <span class="product-conservation-badge">Refrigerado 4°C</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 6.500</span>
+                    <span class="product-price-unit">/ kg</span>
+                    <span class="product-stock-counter">Stock: 40 kg</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Producto 8: Albahaca Morada -->
+            <article class="product-card">
+              <div class="product-card-media">
+                <a href="detalle-producto.html" class="product-media-link" tabindex="-1">
+                  <img src="assets/images/albahaca-morada-organica.jpg" alt="Albahaca Morada Orgánica" class="product-card-img" loading="lazy" />
+                </a>
+                <div class="product-card-badges">
+                  <span class="badge badge-category">Hierbas y Especias</span>
+                  <span class="badge badge-neutral">100% Orgánica</span>
+                  <span class="badge badge-success">Disponible</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-farmer-preview" title="Origen: Carmen de Viboral, Antioquia">
+                  <i data-lucide="user" class="farmer-icon-svg" data-size="13"></i>
+                  <span class="farmer-text">Huerta Aromática • <small>Finca El Remanso</small></span>
+                </div>
+                <h3 class="product-card-title">
+                  <a href="detalle-producto.html" class="product-title-link">Albahaca Morada Orgánica</a>
+                </h3>
+                <p class="product-card-desc">Hojas aromáticas frescas de cultivo limpio sin pesticidas, gran intensidad culinaria y visual.</p>
+                <div class="product-specs-row">
+                  <span class="product-unit-badge">Presentación: Atado de 150g</span>
+                  <span class="product-conservation-badge">Fresco Hidratado</span>
+                </div>
+                <div class="product-card-footer">
+                  <div class="product-price-box">
+                    <span class="product-price-amount">$ 4.200</span>
+                    <span class="product-price-unit">/ atado</span>
+                    <span class="product-stock-counter">Stock: 28 und</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <a href="detalle-producto.html" class="btn btn-outline-secondary btn-sm">
+                      <i data-lucide="eye" data-size="16"></i>
+                    </a>
+                    <a href="carrito.html" class="btn btn-primary btn-sm">
+                      <i data-lucide="shopping-cart" data-size="16"></i>
+                      <span>Agregar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Propuesta de Valor y Compromiso -->
+      <section class="py-5" style="background-color: #f6f8f5; padding-top: 3.5rem; padding-bottom: 3.5rem; border-top: 1px solid var(--border-subtle);">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--primary-100); color: var(--primary-700); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i data-lucide="truck" data-size="24"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem; color: var(--text-primary);">Transporte con Cadena de Frío</h4>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Vehículos termoaislados que conservan entre 0°C y 4°C para garantizar frescura e inocuidad alimentaria.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--primary-100); color: var(--primary-700); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i data-lucide="shield-check" data-size="24"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem; color: var(--text-primary);">Trazabilidad Directa del Productor</h4>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Cada corte y producto identifica la finca, ganadería o huerta campesina exacta de procedencia.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--primary-100); color: var(--primary-700); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i data-lucide="award" data-size="24"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.35rem; color: var(--text-primary);">Pesaje y Calidad Certificada</h4>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Balanza electrónica calibrada, empacado al vacío y control estricto de higiene en cada entrega.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 7. Footer Corporativo -->
+    <footer class="app-footer">
+      <div class="container footer-container">
+        <div class="footer-grid">
+          <!-- Columna 1: Marca -->
+          <div class="footer-col footer-col-brand">
+            <a href="index.html" class="brand-logo footer-logo" aria-label="AgroConnect - Inicio">
+              <div class="brand-icon-wrapper">
+                <i data-lucide="sprout" class="brand-icon-svg" data-size="24"></i>
+              </div>
+              <div class="brand-text">
+                <span class="brand-name">AgroConnect</span>
+                <span class="brand-tagline">Mercado Agroalimentario</span>
+              </div>
+            </a>
+            <p class="footer-desc">
+              Plataforma de comercio agropecuario orientada a la venta directa de alimentos frescos, cortes seleccionados y cosechas de familias campesinas a hogares y negocios.
+            </p>
+          </div>
+
+          <!-- Columna 2: Departamentos -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Departamentos</h4>
+            <ul class="footer-links">
+              <li><a href="productos.html">Catálogo General</a></li>
+              <li><a href="productos.html?category=1">Carnes de Res Seleccionadas</a></li>
+              <li><a href="productos.html?category=2">Carne de Cerdo de Origen</a></li>
+              <li><a href="productos.html?category=3">Frutas Frescas de Temporada</a></li>
+              <li><a href="productos.html?category=4">Verduras y Huerta Campesina</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Servicios y Paneles -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Acceso y Servicios</h4>
+            <ul class="footer-links">
+              <li><a href="carrito.html">Canasta de Compras</a></li>
+              <li><a href="checkout.html">Finalizar Pedido</a></li>
+              <li><a href="dashboard.html">Panel de Usuario / Compras</a></li>
+              <li><a href="login.html">Acceso para Productores</a></li>
+              <li><a href="admin-productos.html">Gestión de Catálogo</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 4: Compromiso -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Compromiso AgroConnect</h4>
+            <ul class="footer-features-list">
+              <li>
+                <i data-lucide="store" class="footer-feature-icon" data-size="15"></i>
+                <span>Comercio directo con productores rurales</span>
+              </li>
+              <li>
+                <i data-lucide="truck" class="footer-feature-icon" data-size="15"></i>
+                <span>Transporte especializado según el producto</span>
+              </li>
+              <li>
+                <i data-lucide="shield-check" class="footer-feature-icon" data-size="15"></i>
+                <span>Pesaje exacto y alimentos 100% frescos</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            © 2026 AgroConnect. Plataforma de comercio agroalimentario directo. Todos los derechos reservados.
+          </p>
+          <div class="footer-bottom-links">
+            <span>Calidad garantizada</span>
+            <span>•</span>
+            <span>Origen campesino</span>
+            <span>•</span>
+            <span>Tecnología rural</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts Autónomos Offline -->
+  <script src="js/icons.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
